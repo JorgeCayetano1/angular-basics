@@ -8,7 +8,7 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class AddCharacterComponent {
   @Output()
-  public orNewCharacter: EventEmitter<Character> = new EventEmitter();
+  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
   public character: Character = {
     name: '',
@@ -19,7 +19,7 @@ export class AddCharacterComponent {
     console.log(this.character);
     if (this.character.name.length === 0) return;
 
-    this.orNewCharacter.emit(this.character);
+    this.onNewCharacter.emit(this.character);
 
     this.character = { name: '', power: 0 };
   }
